@@ -1,7 +1,7 @@
 import * as THREE from 'three';
 import '../styles/index.scss';
-import './particles-config.json';
-import './particles.min.js';
+// import './particles-config.json';
+// import './particles.min.js';
 
 
 particlesJS.load('particles-js', 'src/scripts/particles-config.json', function() {

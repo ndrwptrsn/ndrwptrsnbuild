@@ -20,67 +20,67 @@
         "nb_sides": 5
       },
       "image": [{
-        "src": "http://ndrwptrsn.com/src/assets/large/kiwi.png",
+        "src": "http://localhost:8080/src/assets/large/kiwi.png",
         "width": 32,
         "height": 32
       }, {
-        "src": "http://ndrwptrsn.com/src/assets/large/banana.png",
+        "src": "http://localhost:8080/src/assets/large/banana.png",
         "width": 32,
         "height": 32
       }, {
-        "src": "http://ndrwptrsn.com/src/assets/large/orange.png",
+        "src": "http://localhost:8080/src/assets/large/orange.png",
         "width": 32,
         "height": 32
       }, {
-        "src": "http://ndrwptrsn.com/src/assets/large/mango.png",
+        "src": "http://localhost:8080/src/assets/large/mango.png",
         "width": 32,
         "height": 32
       }, {
-        "src": "http://ndrwptrsn.com/src/assets/large/strawberry.png",
+        "src": "http://localhost:8080/src/assets/large/strawberry.png",
         "width": 32,
         "height": 32
       }, {
-        "src": "http://ndrwptrsn.com/src/assets/large/hotdog.png",
+        "src": "http://localhost:8080/src/assets/large/hotdog.png",
         "width": 32,
         "height": 32
       }, {
-        "src": "http://ndrwptrsn.com/src/assets/large/burger.png",
+        "src": "http://localhost:8080/src/assets/large/burger.png",
         "width": 32,
         "height": 32
       }, {
-        "src": "http://ndrwptrsn.com/src/assets/large/pizza.png",
+        "src": "http://localhost:8080/src/assets/large/pizza.png",
         "width": 32,
         "height": 32
       }, {
-        "src": "http://ndrwptrsn.com/src/assets/large/burrito.png",
+        "src": "http://localhost:8080/src/assets/large/burrito.png",
         "width": 32,
         "height": 32
       }, {
-        "src": "http://ndrwptrsn.com/src/assets/large/taco.png",
+        "src": "http://localhost:8080/src/assets/large/taco.png",
         "width": 32,
         "height": 32
       }, {
-        "src": "http://ndrwptrsn.com/src/assets/large/vomit.png",
+        "src": "http://localhost:8080/src/assets/large/vomit.png",
         "width": 32,
         "height": 32
       }, {
-        "src": "http://ndrwptrsn.com/src/assets/large/puke.png",
+        "src": "http://localhost:8080/src/assets/large/puke.png",
         "width": 32,
         "height": 32
       }, {
-        "src": "http://ndrwptrsn.com/src/assets/large/relief.png",
+        "src": "http://localhost:8080/src/assets/large/relief.png",
         "width": 32,
         "height": 32
       }, {
-        "src": "http://ndrwptrsn.com/src/assets/large/cool.png",
+        "src": "http://localhost:8080/src/assets/large/cool.png",
         "width": 32,
         "height": 32
       }, {
-        "src": "http://ndrwptrsn.com/src/assets/large/fire.png",
+        "src": "http://localhost:8080/src/assets/large/fire.png",
         "width": 32,
         "height": 32
       }, {
-        "src": "http://ndrwptrsn.com/src/assets/large/hundred.png",
+        "src": "http://localhost:8080/src/assets/large/hundred.png",
         "width": 32,
         "height": 32
       }]

@@ -1,0 +1,170 @@
+{
+  "particles": {
+    "number": {
+      "value": 8,
+      "density": {
+        "enable": true,
+        "value_area": 800
+      }
+    },
+    "color": {
+      "value": "#ffffff"
+    },
+    "shape": {
+      "type": "image",
+      "stroke": {
+        "width": 0,
+        "color": "#000000"
+      },
+      "polygon": {
+        "nb_sides": 5
+      },
+      "image": [{
+        "src": "http://ndrwptrsn.com/src/assets/large/kiwi.png",
+        "width": 32,
+        "height": 32
+      }, {
+        "src": "http://ndrwptrsn.com/src/assets/large/banana.png",
+        "width": 32,
+        "height": 32
+      }, {
+        "src": "http://ndrwptrsn.com/src/assets/large/orange.png",
+        "width": 32,
+        "height": 32
+      }, {
+        "src": "http://ndrwptrsn.com/src/assets/large/mango.png",
+        "width": 32,
+        "height": 32
+      }, {
+        "src": "http://ndrwptrsn.com/src/assets/large/strawberry.png",
+        "width": 32,
+        "height": 32
+      }, {
+        "src": "http://ndrwptrsn.com/src/assets/large/hotdog.png",
+        "width": 32,
+        "height": 32
+      }, {
+        "src": "http://ndrwptrsn.com/src/assets/large/burger.png",
+        "width": 32,
+        "height": 32
+      }, {
+        "src": "http://ndrwptrsn.com/src/assets/large/pizza.png",
+        "width": 32,
+        "height": 32
+      }, {
+        "src": "http://ndrwptrsn.com/src/assets/large/burrito.png",
+        "width": 32,
+        "height": 32
+      }, {
+        "src": "http://ndrwptrsn.com/src/assets/large/taco.png",
+        "width": 32,
+        "height": 32
+      }, {
+        "src": "http://ndrwptrsn.com/src/assets/large/vomit.png",
+        "width": 32,
+        "height": 32
+      }, {
+        "src": "http://ndrwptrsn.com/src/assets/large/puke.png",
+        "width": 32,
+        "height": 32
+      }, {
+        "src": "http://ndrwptrsn.com/src/assets/large/relief.png",
+        "width": 32,
+        "height": 32
+      }, {
+        "src": "http://ndrwptrsn.com/src/assets/large/cool.png",
+        "width": 32,
+        "height": 32
+      }, {
+        "src": "http://ndrwptrsn.com/src/assets/large/fire.png",
+        "width": 32,
+        "height": 32
+      }, {
+        "src": "http://ndrwptrsn.com/src/assets/large/hundred.png",
+        "width": 32,
+        "height": 32
+      }]
+    },
+    "opacity": {
+      "value": 0.5,
+      "random": false,
+      "anim": {
+        "enable": false,
+        "speed": 1,
+        "opacity_min": 0.1,
+        "sync": false
+      }
+    },
+    "size": {
+      "value": 32,
+      "random": true,
+      "anim": {
+        "enable": false,
+        "speed": 40,
+        "size_min": 0.1,
+        "sync": false
+      }
+    },
+    "line_linked": {
+      "enable": false,
+      "distance": 150,
+      "color": "#ffffff",
+      "opacity": 0.4,
+      "width": 1
+    },
+    "move": {
+      "enable": true,
+      "speed": 1,
+      "direction": "none",
+      "random": false,
+      "straight": false,
+      "out_mode": "out",
+      "bounce": false,
+      "attract": {
+        "enable": false,
+        "rotateX": 600,
+        "rotateY": 1200
+      }
+    }
+  },
+  "interactivity": {
+    "detect_on": "window",
+    "events": {
+      "onhover": {
+        "enable": true,
+        "mode": "bubble"
+      },
+      "onclick": {
+        "enable": false,
+        "mode": "push"
+      },
+      "resize": true
+    },
+    "modes": {
+      "grab": {
+        "distance": 400,
+        "line_linked": {
+          "opacity": 1
+        }
+      },
+      "bubble": {
+        "distance": 400,
+        "size": 32,
+        "duration": 2,
+        "opacity": 8,
+        "speed": 3
+      },
+      "repulse": {
+        "distance": 200,
+        "duration": 0.4
+      },
+      "push": {
+        "particles_nb": 4
+      },
+      "remove": {
+        "particles_nb": 2
+      }
+    }
+  },
+  "retina_detect": true
+}

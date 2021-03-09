@@ -3,89 +3,83 @@
    <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
-      <style>html {
-         visibility: hidden;
-         opacity:0;
-         }
 
-         .videoWrapper {
-            position: relative;
-            padding-bottom: 56.25%; /* 16:9 */
-            padding-top: 25px;
-            height: 0;
-        }
-        .videoWrapper iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
+      <style>
+        /* html {
+        	 visibility: hidden;
+        	 opacity:0;
+      	 } */
       </style>
-      <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Slab" rel="stylesheet">
+
       <meta property="og:title" content="ndrwptrsn">
       <meta property="og:url" content="https://ndrwptrsn.com">
-      <meta property="og:description" content="Developer">
+      <meta property="og:description" content="Web Developer">
+
       <meta name="twitter:title" content="ndrwptrsn">
       <meta name="twitter:site" content="https://ndrwptrsn.com">
-      <meta name="twitter:description" content="Developer">
+      <meta name="twitter:description" content="Web Developer">
+
       <title>ndrwptrsn.com</title>
-      <meta name="description" content="Developer">
+
+      <meta name="description" content="Web Developer">
+
       <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
       <link rel="icon" href="favicon.ico" type="image/x-icon">
-      <link href="bundle.css" rel="stylesheet">
+
+      <link href="./styles.css" rel="stylesheet">
+
+
+
    </head>
    <body>
+     <div class="videoWrapper fade">
+       <iframe width="560" height="315" src="https://www.youtube.com/embed/uDCu5HSbNFo?autoplay=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+     </div>
       <div class="intro">
-      <div class="videoWrapper">
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/uDCu5HSbNFo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      </div>
-         <div class="header">
+
+
+         <div class="header" id="header">
             <h1 class="animate delayheader1">ndrwptrsn</h1>
+            <h2 class="animate delayheader2">creative web developer</h2>
+            <br>
             <h2 class="animate delayheader2">
                <a href="http://twitter.com/ndrwptrsn" target="blank" class="icon" id="twitter">
                   <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve" class="icon">
-                     <path d="M50,0C22.4,0,0,22.4,0,50s22.4,50,50,50s50-22.4,50-50S77.6,0,50,0z M76.7,36.4c0.3,9.1-2.3,16.4-5.7,22.1
-                        c-3.3,5.6-7.8,10.1-13.2,13.3c-5.4,3.3-12.6,5.7-21.1,5.4c-7.9-0.2-14.2-2.5-19.3-5.6c-0.3-0.2-0.7-0.4-0.9-0.7
-                        c8.8,1,15.5-1.9,20.3-5.6c-3.5-0.1-6.2-1.3-8.2-3c-2-1.6-3.7-3.8-4.6-6.6c1.8,0.4,4.4,0.3,6-0.2c-3.3-0.7-5.7-2.5-7.6-4.7
-                        c-1.9-2.1-3.2-5-3.2-9c0.1-0.2,0.4,0.1,0.6,0.2c1.5,0.7,3.4,1.3,5.5,1.4c-3.4-2.4-6.8-7-5.8-13.5c0.3-1.9,0.9-3.5,1.7-4.9
-                        c0.9,0.9,1.7,1.9,2.6,2.8C30,34,38,38.5,49.6,39.4c-1.6-7.1,2.1-12.4,6.6-15c2.5-1.4,6-2.1,9.4-1.4c3.1,0.6,5.5,2.2,7.3,4
-                        c3.4-0.6,6.1-1.9,8.7-3.3c-1.2,3.3-3.1,5.9-6,7.5c2.8-0.2,5.5-1.2,7.8-2.1C81.7,32,79.3,34.3,76.7,36.4z"/>
+                     <path d="M 50.0625 10.4375 C 48.214844 11.257813 46.234375 11.808594 44.152344 12.058594 C 46.277344 10.785156 47.910156 8.769531 48.675781 6.371094 C 46.691406 7.546875 44.484375 8.402344 42.144531 8.863281 C 40.269531 6.863281 37.597656 5.617188 34.640625 5.617188 C 28.960938 5.617188 24.355469 10.21875 24.355469 15.898438 C 24.355469 16.703125 24.449219 17.488281 24.625 18.242188 C 16.078125 17.8125 8.503906 13.71875 3.429688 7.496094 C 2.542969 9.019531 2.039063 10.785156 2.039063 12.667969 C 2.039063 16.234375 3.851563 19.382813 6.613281 21.230469 C 4.925781 21.175781 3.339844 20.710938 1.953125 19.941406 C 1.953125 19.984375 1.953125 20.027344 1.953125 20.070313 C 1.953125 25.054688 5.5 29.207031 10.199219 30.15625 C 9.339844 30.390625 8.429688 30.515625 7.492188 30.515625 C 6.828125 30.515625 6.183594 30.453125 5.554688 30.328125 C 6.867188 34.410156 10.664063 37.390625 15.160156 37.472656 C 11.644531 40.230469 7.210938 41.871094 2.390625 41.871094 C 1.558594 41.871094 0.742188 41.824219 -0.0585938 41.726563 C 4.488281 44.648438 9.894531 46.347656 15.703125 46.347656 C 34.617188 46.347656 44.960938 30.679688 44.960938 17.09375 C 44.960938 16.648438 44.949219 16.199219 44.933594 15.761719 C 46.941406 14.3125 48.683594 12.5 50.0625 10.4375 Z"/>
                   </svg>
                </a>
                <a href="http://linkedin.com/in/ndrwptrsn" target="blank" class="icon" id="linkedin">
                   <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve" class="icon">
-                     <path d="M50,0C22.4,0,0,22.4,0,50s22.4,50,50,50s50-22.4,50-50S77.6,0,50,0z M36,75.3c-3.5,0-7,0-10.5,0c0-11.2,0-22.4,0-33.6
-                        c0-0.1,0-0.2,0.1-0.2c3.5,0,7,0,10.5,0C36,52.7,36,64,36,75.3z M27.3,35.9c-1.6-1.1-2.9-3.4-2.6-6.1c0.3-2,1.7-3.7,3.2-4.5
-                        c0.5-0.3,1.2-0.5,2-0.5c4-0.5,7,2.3,7,6.1C36.8,35.5,31.5,38.7,27.3,35.9z M75.4,75.3c-3.5,0-7,0-10.5,0c0-3.8,0-7.8,0-12.1
-                        c0-5.1,0.7-11-2.8-12.8c-1.7-0.9-4-0.6-5.5,0c-3.8,1.7-3.5,7.1-3.5,13c0,4.1,0,8.4,0,11.9c-3.5,0-7,0-10.5,0c0-11.3,0-22.6,0-33.8
-                        c3.4,0,6.7,0,10.1,0c0,1.5,0,3.1,0,4.6c0.4-0.3,0.5-0.7,0.8-1.1c1.8-2.4,5-4.4,9.1-4.4c5.2,0,8.9,1.8,10.8,5.1c2,3.5,2,8.4,2,13.9
-                        C75.4,64.7,75.4,70.3,75.4,75.3z"/>
+                     <path d="M 8 3.0097656 C 4.53 3.0097656 2.0097656 5.0892187 2.0097656 7.9492188 C 2.0097656 10.819219 4.59 12.990234 8 12.990234 C 11.47 12.990234 13.990234 10.870625 13.990234 7.890625 C 13.830234 5.020625 11.36 3.0097656 8 3.0097656 z M 3 15 C 2.45 15 2 15.45 2 16 L 2 45 C 2 45.55 2.45 46 3 46 L 13 46 C 13.55 46 14 45.55 14 45 L 14 16 C 14 15.45 13.55 15 13 15 L 3 15 z M 18 15 C 17.45 15 17 15.45 17 16 L 17 45 C 17 45.55 17.45 46 18 46 L 27 46 C 27.552 46 28 45.552 28 45 L 28 30 L 28 29.75 L 28 29.5 C 28 27.13 29.820625 25.199531 32.140625 25.019531 C 32.260625 24.999531 32.38 25 32.5 25 C 32.62 25 32.739375 24.999531 32.859375 25.019531 C 35.179375 25.199531 37 27.13 37 29.5 L 37 45 C 37 45.552 37.448 46 38 46 L 47 46 C 47.55 46 48 45.55 48 45 L 48 28 C 48 21.53 44.529063 15 36.789062 15 C 33.269062 15 30.61 16.360234 29 17.490234 L 29 16 C 29 15.45 28.55 15 28 15 L 18 15 z"/>
                   </svg>
                </a>
                <a href="http://github.com/ndrwptrsn" target="blank" class="icon" id="github">
                   <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve" class="icon">
-                     <g>
-                        <path d="M50,0C22.4,0,0,22.4,0,50s22.4,50,50,50s50-22.4,50-50S77.6,0,50,0z M81.8,61.2c-0.6,2.2-0.8,2.9-1.1,3.5l-0.2,0.4
-                           c-2.7,6.2-8.7,10.2-21.1,11.5H41.8c-11.6-1.3-18.2-5.3-21.5-11.4c0,0-0.1-0.2-0.2-0.4c-0.3-0.6-0.6-1.3-0.9-2
-                           C19,62.5,19,62.6,19,62.3c-1.2-3.3-1.7-7.1-1.7-11.4c0-5.6,2-10.2,5.4-13.8c-0.5-1.3-2.3-6.6,0.5-13.6c0,0,4.3-1.4,14.2,5.3
-                           c4.1-1.1,8.6-1.7,12.9-1.7c4,0,8,0.5,11.7,1.4c6.9-4.6,11-5.2,12.7-5.2c0.7,0,1,0.1,1,0.1c2.4,6,1.5,10.6,0.9,12.7
-                           c3.7,3.7,6,8.6,6,14.7C82.7,55.2,82.4,59,81.8,61.2z"/>
-                        <path d="M68.1,48.2c-1.8-1.9-4.3-2.4-7.2-2.4c-3.1,0-6.6,0.6-10.3,0.6c-7.3,0-13.7-2.1-17.5,1.9c-2.3,2.4-3.6,5.3-3.6,8.5
-                           c0,13.1,9.5,15.1,21.2,15.1s21.2-0.4,21.2-15.1C71.7,53.6,70.4,50.7,68.1,48.2L68.1,48.2z M39.1,64.8c-2.4,0-4.4-3.3-4.4-7.3
-                           c0-4.1,2-7.3,4.4-7.3s4.4,3.3,4.4,7.3S41.5,64.8,39.1,64.8z M62.7,64.8c-2.4,0-4.4-3.3-4.4-7.3c0-4.1,2-7.3,4.4-7.3
-                           c2.4,0,4.4,3.3,4.4,7.3S65.2,64.8,62.7,64.8z"/>
-                     </g>
+                     <path d="M 33 29 C 31.203125 29 30 30.515625 30 33 C 30 35.484375 30.890625 38.046875 33 38 C 35.21875 37.949219 36.019531 35.777344 36 33 C 35.984375 30.515625 34.792969 29 33 29 Z M 44.261719 17.066406 C 44.535156 15.722656 44.652344 10.964844 42.679688 6 C 42.679688 6 38.148438 6.496094 31.296875 11.199219 C 29.863281 10.800781 27.429688 10.601563 25 10.601563 C 22.570313 10.601563 20.140625 10.800781 18.699219 11.195313 C 11.851563 6.496094 7.324219 6 7.324219 6 C 5.347656 10.964844 5.445313 15.609375 5.738281 17.066406 C 3.417969 19.585938 2 22.609375 2 26.742188 C 2 44.707031 16.90625 44.996094 20.667969 44.996094 C 21.519531 44.996094 23.210938 44.996094 25 45 C 26.789063 44.996094 28.484375 44.996094 29.332031 44.996094 C 33.09375 44.996094 48 44.707031 48 26.742188 C 48 22.609375 46.582031 19.585938 44.261719 17.066406 Z M 25.140625 43 L 25 43 C 15.570313 43 8.15625 41.660156 8.15625 32.496094 C 8.15625 30.300781 8.933594 28.265625 10.773438 26.574219 C 13.84375 23.753906 19.035156 25.246094 24.929688 25.246094 C 24.953125 25.246094 25.050781 25.246094 25.070313 25.246094 C 30.964844 25.246094 36.160156 23.757813 39.230469 26.574219 C 41.070313 28.265625 41.84375 30.300781 41.84375 32.496094 C 41.84375 41.660156 34.570313 43 25.140625 43 Z M 17 29 C 15.207031 29 14 31.015625 14 33.5 C 14 35.984375 15.207031 38 17 38 C 18.796875 38 20 35.984375 20 33.5 C 20 31.015625 18.796875 29 17 29 Z"/>
+                  </svg>
+               </a>
+               <a href="https://www.youtube.com/watch?v=uDCu5HSbNFo" target="blank" class="icon" id="youtube">
+                  <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve" class="icon">
+                     <path d="M 44.898438 14.5 C 44.5 12.300781 42.601563 10.699219 40.398438 10.199219 C 37.101563 9.5 31 9 24.398438 9 C 17.800781 9 11.601563 9.5 8.300781 10.199219 C 6.101563 10.699219 4.199219 12.199219 3.800781 14.5 C 3.398438 17 3 20.5 3 25 C 3 29.5 3.398438 33 3.898438 35.5 C 4.300781 37.699219 6.199219 39.300781 8.398438 39.800781 C 11.898438 40.5 17.898438 41 24.5 41 C 31.101563 41 37.101563 40.5 40.601563 39.800781 C 42.800781 39.300781 44.699219 37.800781 45.101563 35.5 C 45.5 33 46 29.398438 46.101563 25 C 45.898438 20.5 45.398438 17 44.898438 14.5 Z M 19 32 L 19 18 L 31.199219 25 Z"/>
                   </svg>
                </a>
             </h2>
-            
+
          </div>
+
          <div class="spacer"></div>
-         <div class="content animate delaycontent">
-            <p></p>
-         </div>
+
+      <div class="content animate fade">
+        <div id="container">
+          <div id="main" role="main"></div>
+          </div>
+        </div>
       </div>
-      
+
+
+      <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+      <script type="text/javascript" src="./src/scripts/Three.js"></script>
+      <script type="text/javascript" src="./src/scripts/RequestAnimationFrame.js"></script>
+      <script type="text/javascript" src="./src/scripts/starfield.js"></script>
    </body>
 </html>

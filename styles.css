@@ -18,7 +18,8 @@ body {
 	background: linear-gradient(to bottom, #000000, #000000);
 	background-attachment: fixed;
 	font-family: Roboto Slab, serif;
-	color: #666666
+	color: rgb(100,100,100)
+
 }
 
 ::selection {
@@ -50,8 +51,8 @@ h2 {
 	transition: opacity .5s;
 	width: 7.5vw;
 	text-decoration: none;
-	fill: #666666 !important;
-	opacity: 1
+	fill: rgb(100,100,100) !important;
+	/* opacity: .5; */
 }
 
 .icon:hover {
@@ -59,37 +60,29 @@ h2 {
 }
 
 #github {
-	// cursor: url(src/assets/banana.png), auto
+	/* // cursor: url(src/assets/banana.png), auto */
 }
 
 #linkedin {
-	// cursor: url(src/assets/orange.png), auto
+	/* // cursor: url(src/assets/orange.png), auto */
 }
 
 #instagram {
-	// cursor: url(src/assets/kiwi.png), auto
+	/* // cursor: url(src/assets/kiwi.png), auto */
 }
 
 #soundcloud {
-	// cursor: url(src/assets/banana.png), auto
+	/* // cursor: url(src/assets/banana.png), auto */
 }
 
 #twitter {
-	// cursor: url(src/assets/pineapple.png), auto
+	/* // cursor: url(src/assets/pineapple.png), auto */
 }
 
 #paintmoji {
-	// cursor: url(src/assets/banana.png), auto
+	/* // cursor: url(src/assets/banana.png), auto */
 }
 
-#particles-js {
-	height: 100vh;
-	width: 100vw;
-	position: absolute;
-	top: 0px;
-	left: 0px;
-	z-index: -100
-}
 
 p {
 	width: 65vw;
@@ -140,7 +133,11 @@ a.link:hover::before {
 }
 
 .header {
-	margin-left: 20px
+	margin-left: 20px;
+	mix-blend-mode: difference;
+	position: absolute;
+	top:calc(((100vw / 16) * 9) + 1vh);
+	z-index: 10000000;
 }
 
 .header {
@@ -170,7 +167,8 @@ a.link:hover::before {
 	}
 	100% {
 		opacity: 1;
-		-webkit-transform: translateY(0%)
+		-webkit-transform: translateY(0%);
+		mix-blend-mode: difference;
 	}
 }
 
@@ -181,7 +179,8 @@ a.link:hover::before {
 	}
 	100% {
 		opacity: 1;
-		transform: translateY(0%)
+		transform: translateY(0%);
+		mix-blend-mode: difference;
 	}
 }
 
@@ -191,7 +190,8 @@ a.link:hover::before {
 	animation: fade 0.5s cubic-bezier(0.59, 0.01, 0.28, 1);
 	-webkit-animation-fill-mode: backwards;
 	-moz-animation-fill-mode: backwards;
-	animation-fill-mode: backwards
+	animation-fill-mode: backwards;
+	mix-blend-mode: difference;
 }
 
 @-webkit-keyframes fade {
@@ -199,7 +199,8 @@ a.link:hover::before {
 		opacity: 0
 	}
 	100% {
-		opacity: 1
+		opacity: 1;
+		mix-blend-mode: difference;
 	}
 }
 
@@ -208,7 +209,8 @@ a.link:hover::before {
 		opacity: 0
 	}
 	100% {
-		opacity: 1
+		opacity: 1;
+		mix-blend-mode: difference;
 	}
 }
 
@@ -218,7 +220,8 @@ a.link:hover::before {
 	animation: fade 1s;
 	-webkit-animation-fill-mode: backwards;
 	-moz-animation-fill-mode: backwards;
-	animation-fill-mode: backwards
+	animation-fill-mode: backwards;
+	mix-blend-mode: difference;
 }
 
 @-webkit-keyframes fade2 {
@@ -226,7 +229,8 @@ a.link:hover::before {
 		opacity: 0
 	}
 	100% {
-		opacity: 1
+		opacity: 1;
+		mix-blend-mode: difference;
 	}
 }
 
@@ -235,7 +239,8 @@ a.link:hover::before {
 		opacity: 0
 	}
 	100% {
-		opacity: 1
+		opacity: 1;
+		mix-blend-mode: difference;
 	}
 }
 
@@ -274,4 +279,53 @@ html {
 }
 
 
-/*# sourceMappingURL=bundle.css.map*/
+
+html, body {
+  overflow: hidden;
+  /* font-size: 20px;
+  width: 100%;
+  height: 100%;
+  background-color: #000; */
+}
+
+.videoWrapper {
+	z-index: 100000000;
+	 position: relative;
+	 padding-bottom: 56.25%; /* 16:9 */
+	 padding-top: 0px;
+	 height: 0;
+	 /* background-color: #000; */
+}
+
+.videoWrapper iframe {
+	 position: absolute;
+	 top: 0;
+	 left: 0;
+	 width: 100%;
+	 height: 100%;
+	 z-index: 10000;
+}
+
+#container {
+	z-index: -100;
+  position: fixed;
+  top: calc((100vw / 16) * 9);
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 43.75%;
+	/* background: red; */
+}
+
+
+#main {
+	/* z-index: -100; */
+  position: fixed;
+  top: calc((100vw / 16) * 9);
+  left: 0;
+  width: 100%;
+  height: calc(100vh - (100vw / 16) * 9);
+  right: 0;
+  bottom: 0;
+}

@@ -17,6 +17,8 @@ var Starfield = (function() {
   function initialize(element) {
     // colors
     document.body.style.background = colors[3];
+    document.getElementById("main").style.background = 'linear-gradient(to bottom, ' + colors[3] + ',' + colors[1] + ')';
+
     container = ( typeof element == 'string') ? document.getElementById(element) : element;
     measure();
     setupCamera();

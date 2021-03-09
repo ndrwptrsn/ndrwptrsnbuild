@@ -57,6 +57,7 @@ h2 {
 
 .icon:hover {
 	opacity: .75
+	fill: rgb(0,0,0) !important;
 }
 
 #github {

@@ -140,8 +140,8 @@ var Starfield = (function() {
     // camera.position.x += ( mouseX - camera.position.x ) * 0.005;
     // camera.position.y += ( - mouseY - camera.position.y ) * 0.005;
 
-    starfield.rotation.x -= randomNumbers[0]/5000;
-    starfield.rotation.y += randomNumbers[1]/5000;
+    starfield.rotation.x -= randomNumbers[0]/8000;
+    starfield.rotation.y += randomNumbers[1]/8000;
 
     renderer.render( scene, camera );
   }

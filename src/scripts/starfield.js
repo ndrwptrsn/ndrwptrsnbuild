@@ -664,13 +664,7 @@ var Starfield = (function() {
   }
 
   function initialize(element) {
-    let num = localStorage.getItem('setting') || 0;
-    if (isNaN(num)) {
-      num = (Math.floor(Math.random() * 9));
-    }
-    num = parseInt(num,10) + 1;
-    console.log(num)
-    localStorage.setItem('setting', num % 9);
+    let num = (Math.floor(Math.random() * 9));
     colors = settings[choiceSettings[num]].colors;
     numbers = settings[choiceSettings[num]].numbers;
 

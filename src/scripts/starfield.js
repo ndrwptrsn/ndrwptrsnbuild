@@ -623,35 +623,36 @@ var Starfield = (function() {
   var camera, scene, renderer;
   var starfield;
   var mouseX = 0, mouseY = 0;
-  let colors = [
-    random_rgba(),
-    random_rgba(),
-    random_rgba(),
-    random_rgba(),
-    random_rgba(),
-    random_rgba()
+  // let colors = [
+  //   random_rgba(),
+  //   random_rgba(),
+  //   random_rgba(),
+  //   random_rgba(),
+  //   random_rgba(),
+  //   random_rgba()
+  // ];
+  // let numbers = [
+  //   randomNumber(),
+  //   randomNumber(),
+  //   randomNumber()
+  // ];
+  let num = (Math.floor(Math.random() * 9));
+  let choiceSettings = [
+    3,6,14,16,17,27,30,32,33,34
   ];
-  let numbers = [
-    randomNumber(),
-    randomNumber(),
-    randomNumber()
-  ];
-  // let num = (Math.floor(Math.random() * 9));
-  // let choiceSettings = [
-  //   3,6,14,16,17,27,30,32,33,34
-  // ]
-  // let colors = settings[choiceSettings[num]].colors;
-  // let numbers = settings[choiceSettings[num]].numbers;
+  console.log(num);
+  let colors = settings[choiceSettings[0]].colors;
+  let numbers = settings[choiceSettings[num]].numbers;
 
 
   function download(filename) {
-    let text = '{\n';
-    text += '    colors: [\n';
-    colors.map((c) => text += '        ' + c.toString() + ',\n');
-    text += '    ],\n    numbers: [\n';
-    numbers.map((n) => text += '        ' + n.toString() + ',\n');
-    text += '    ]\n';
-    text += '},';
+    // let text = '{\n';
+    // text += '    colors: [\n';
+    // colors.map((c) => text += '        ' + c.toString() + ',\n');
+    // text += '    ],\n    numbers: [\n';
+    // numbers.map((n) => text += '        ' + n.toString() + ',\n');
+    // text += '    ]\n';
+    // text += '},';
     // var element = document.createElement('a');
     // element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
     // element.setAttribute('download', filename);
@@ -665,7 +666,7 @@ var Starfield = (function() {
   }
 
   function initialize(element) {
-    console.log('updated')
+    console.log('')
     document.body.style.background = colors[3];
     document.getElementById("main").style.background = 'linear-gradient(to bottom, ' + colors[3] + ',' + colors[1] + ')';
 

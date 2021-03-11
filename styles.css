@@ -13,9 +13,9 @@ html {
 body {
 	width: 100vw;
 	height: 100vh;
-	background: #000000;
+	/* background: #000000;
 	background: -webkit-linear-gradient(to bottom, #000000, #000000);
-	background: linear-gradient(to bottom, #000000, #000000);
+	background: linear-gradient(to bottom, #000000, #000000); */
 	background-attachment: fixed;
 	font-family: Roboto Slab, serif;
 	color: rgb(255,255,255)

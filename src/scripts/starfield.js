@@ -664,7 +664,7 @@ var Starfield = (function() {
   }
 
   function initialize(element) {
-    let num = localStorage.getItem('setting');
+    let num = localStorage.getItem('setting') || 0;
     num = parseInt(num,10) + 1;
     localStorage.setItem('setting', num % 9);
     colors = settings[choiceSettings[num]].colors;

@@ -733,11 +733,11 @@ var Starfield = (function() {
 
   function createRedDwarf() {
     var canvas = document.createElement('canvas');
-    canvas.width = 1600;
-    canvas.height = 1600;
+    canvas.width = 160;
+    canvas.height = 160;
 
     var ctx = canvas.getContext('2d');
-    var gradient = ctx.createRadialGradient(800, 800, 0, 800, 800, 800);
+    var gradient = ctx.createRadialGradient(80, 80, 0, 80, 80, 80);
     gradient.addColorStop(0,    'rgba(255,255,255,.8)' );
     gradient.addColorStop(numbers[2],  colors[4] );
     gradient.addColorStop(numbers[0],  colors[5] );
@@ -745,17 +745,17 @@ var Starfield = (function() {
     gradient.addColorStop(1,    'rgba(0,0,0,0)' );
 
     ctx.fillStyle = gradient;
-    ctx.fillRect(0, 0, 1600, 1600);
+    ctx.fillRect(0, 0, 160, 160);
     return canvas;
   }
 
   function createStar() {
     var canvas = document.createElement('canvas');
-    canvas.width = 1600;
-    canvas.height = 1600;
+    canvas.width = 160;
+    canvas.height = 160;
 
     var ctx = canvas.getContext('2d');
-    var gradient = ctx.createRadialGradient(800, 800, 0, 800, 800, 800);
+    var gradient = ctx.createRadialGradient(80, 80, 0, 80, 80, 80);
     gradient.addColorStop(0,    'rgba(255,255,255,.8)' );
     gradient.addColorStop(numbers[0],  colors[1] );
     gradient.addColorStop(numbers[1],  colors[2] );
@@ -763,7 +763,7 @@ var Starfield = (function() {
     gradient.addColorStop(1,    'rgba(0,0,0,0)' );
 
     ctx.fillStyle = gradient;
-    ctx.fillRect(0, 0, 1600, 1600);
+    ctx.fillRect(0, 0, 160, 160);
     return canvas;
   }
 

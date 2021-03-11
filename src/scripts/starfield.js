@@ -636,12 +636,13 @@ var Starfield = (function() {
   //   randomNumber(),
   //   randomNumber()
   // ];
-  let colors;
-  let numbers;
-
+  let num = (Math.floor(Math.random() * 9));
   let choiceSettings = [
     3,6,14,16,17,27,30,32,33,34
   ]
+  let colors = settings[choiceSettings[num]].colors;
+  let numbers = settings[choiceSettings[num]].numbers;
+
 
   function download(filename) {
     let text = '{\n';
@@ -664,9 +665,9 @@ var Starfield = (function() {
   }
 
   function initialize(element) {
-    let num = (Math.floor(Math.random() * 9));
-    colors = settings[choiceSettings[num]].colors;
-    numbers = settings[choiceSettings[num]].numbers;
+
+
+
 
 
     // download('settings.txt');

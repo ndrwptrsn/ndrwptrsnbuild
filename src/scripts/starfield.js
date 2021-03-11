@@ -636,13 +636,14 @@ var Starfield = (function() {
   //   randomNumber(),
   //   randomNumber()
   // ];
-  let num = (Math.floor(Math.random() * 9));
+  let num = (Math.floor(Math.random() * 35));
   let choiceSettings = [
-    3,6,14,16,17,27,30,32,33,34
+    3,33,33,16,17,27,33,32,8,34
   ];
+    // 3,6,14,16,17,27,30,32,33,34
   console.log(num);
   let colors = settings[choiceSettings[0]].colors;
-  let numbers = settings[choiceSettings[num]].numbers;
+  let numbers = settings[num].numbers;
 
 
   function download(filename) {

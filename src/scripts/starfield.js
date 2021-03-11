@@ -623,25 +623,25 @@ var Starfield = (function() {
   var camera, scene, renderer;
   var starfield;
   var mouseX = 0, mouseY = 0;
-  // let colors = [
-  //   random_rgba(),
-  //   random_rgba(),
-  //   random_rgba(),
-  //   random_rgba(),
-  //   random_rgba(),
-  //   random_rgba()
-  // ];
-  // let numbers = [
-  //   randomNumber(),
-  //   randomNumber(),
-  //   randomNumber()
-  // ];
-  let num = (Math.floor(Math.random() * 9));
-  let choiceSettings = [
-    3,6,14,16,17,27,30,32,33,34
-  ]
-  let colors = settings[choiceSettings[num]].colors;
-  let numbers = settings[choiceSettings[num]].numbers;
+  let colors = [
+    random_rgba(),
+    random_rgba(),
+    random_rgba(),
+    random_rgba(),
+    random_rgba(),
+    random_rgba()
+  ];
+  let numbers = [
+    randomNumber(),
+    randomNumber(),
+    randomNumber()
+  ];
+  // let num = (Math.floor(Math.random() * 9));
+  // let choiceSettings = [
+  //   3,6,14,16,17,27,30,32,33,34
+  // ]
+  // let colors = settings[choiceSettings[num]].colors;
+  // let numbers = settings[choiceSettings[num]].numbers;
 
 
   function download(filename) {
@@ -665,15 +665,10 @@ var Starfield = (function() {
   }
 
   function initialize(element) {
-
-
-
-
-
-    // download('settings.txt');
+    console.log('updated')
     document.body.style.background = colors[3];
     document.getElementById("main").style.background = 'linear-gradient(to bottom, ' + colors[3] + ',' + colors[1] + ')';
-    //
+
     container = ( typeof element == 'string') ? document.getElementById(element) : element;
     measure();
     setupCamera();

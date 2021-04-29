@@ -1,5 +1,8 @@
 
-var Starfield = (function() {
+var OrbField = (function() {
+
+
+
   var settings = [
      {
         "colors":[
@@ -11,9 +14,9 @@ var Starfield = (function() {
            "rgba(166,124,54,0.3)"
         ],
         "numbers":[
-           0.8815426356859155,
-           0.5441295087362039,
-           0.4113147275839719
+           0.25,
+           0.5,
+           0.75
         ]
      },
      {
@@ -41,9 +44,9 @@ var Starfield = (function() {
            "rgba(45,130,217,0.4)"
         ],
         "numbers":[
-           0.9968057024995622,
-           0.2997846450019399,
-           0.06064256843475513
+           0.25,
+           0.5,
+           0.75
         ]
      },
      {
@@ -56,9 +59,9 @@ var Starfield = (function() {
            "rgba(139,69,68,0.3)"
         ],
         "numbers":[
-           0.2153873680123657,
-           0.28912356348085644,
-           0.9254637443458458
+           .8,
+           0.75,
+           0.9
         ]
      },
      ,
@@ -622,6 +625,10 @@ var Starfield = (function() {
   var windowWidth, windowHeight, windowHalfWidth, windowHalfHeight;
   var camera, scene, renderer;
   var starfield;
+  var mouse;
+  var raycaster;
+  var intersects;
+
   var mouseX = 0, mouseY = 0;
   // let colors = [
   //   random_rgba(),
@@ -631,19 +638,22 @@ var Starfield = (function() {
   //   random_rgba(),
   //   random_rgba()
   // ];
-  // let numbers = [
-  //   randomNumber(),
-  //   randomNumber(),
-  //   randomNumber()
-  // ];
-  let num = (Math.floor(Math.random() * 35));
-  let choiceSettings = [
-    3,33,33,16,17,27,33,32,8,34
+  let numbers = [
+    randomNumber(),
+    randomNumber(),
+    randomNumber()
   ];
-    // 3,6,14,16,17,27,30,32,33,34
-  console.log(num);
-  let colors = settings[choiceSettings[0]].colors;
-  let numbers = settings[num].numbers;
+
+  let choiceSettings = [
+    35,34,32,30,29,15,14, 3,33,
+  ];
+  // 38,17
+  // 33,33,16,17,27,33,32,8,34
+  let num = (Math.floor(Math.random() * (choiceSettings.length - 1)));
+  num = choiceSettings[num];
+  console.log(num)
+  let colors = settings[num].colors;
+  // let numbers = settings[num].numbers;
 
 
   function download(filename) {
@@ -666,10 +676,29 @@ var Starfield = (function() {
     // document.body.removeChild(element);
   }
 
+  function numberBetween(smallNumber, bigNumber) {
+    return Math.floor(Math.random() * bigNumber) + smallNumber;
+  }
+
+  function fullOpacity(rgba) {
+    let newRgba = '';
+    rgba.split(',').map((v,i) => i !== 3 ? newRgba += v + ',' : newRgba += '0.2)');
+    return newRgba;
+  }
+
   function initialize(element) {
-    console.log('')
-    document.body.style.background = colors[3];
-    document.getElementById("main").style.background = 'linear-gradient(to bottom, ' + colors[3] + ',' + colors[1] + ')';
+    document.body.style.background = colors[numberBetween(2,3)];
+
+
+    let background = 'linear-gradient(to bottom, ' + fullOpacity(colors[numberBetween(0,2)]) + ',' + fullOpacity(colors[numberBetween(2,4)]) + ')';
+    document.getElementById("main").style.background = background;
+    let radialBackground = 'radial-gradient(circle at '+Math.random()*100+'%, rgba(0,0,0,0.5), rgba(0,0,0,1))';
+    document.getElementById("header").style.background = radialBackground;
+
+
+
+    raycaster = new THREE.Raycaster();
+    mouse = new THREE.Vector2();
 
     container = ( typeof element == 'string') ? document.getElementById(element) : element;
     measure();
@@ -677,11 +706,11 @@ var Starfield = (function() {
     setupScene();
     createRenderer();
 
-
-    // Event listeners
     $(document).mousemove(onMouseMove);
     // $(window).resize(onResize);
   }
+
+
 
   function measure() {
     windowWidth       = window.innerWidth;
@@ -701,8 +730,17 @@ var Starfield = (function() {
     if ( !scene ) {
       starfield = new THREE.Object3D();
 
-      addCelestialObjectsTo(starfield, 1000 * numbers[0]^2, createStar);
-      addCelestialObjectsTo(starfield, 1000 * numbers[1]^2, createRedDwarf);
+      for (var i = 0; i < 50; i++) {
+        numbers = [
+          randomNumber(),
+          randomNumber(),
+          randomNumber()
+        ];
+        const oneFive = Math.floor(Math.random() * 5) + 0;
+        colors[oneFive] = modifyRGBA(modifyRGBA(modifyRGBA(colors[oneFive])));
+        addCelestialObjectsTo(starfield, oneFive, createStar);
+        addCelestialObjectsTo(starfield, oneFive, createRedDwarf);
+      }
 
       starfield.frustumCulled = false;
 
@@ -730,21 +768,29 @@ var Starfield = (function() {
 
   function createRedDwarf() {
     var canvas = document.createElement('canvas');
-    canvas.width = 160;
-    canvas.height = 160;
+    canvas.width = 400;
+    canvas.height = 400;
 
     var ctx = canvas.getContext('2d');
-    var gradient = ctx.createRadialGradient(80, 80, 0, 80, 80, 80);
-    gradient.addColorStop(0,    'rgba(255,255,255,.8)' );
+    var positionMod = (Math.floor(numbers[numberBetween(0,3)]*5)+14)*10;
+    var gradient = ctx.createRadialGradient(200, 200, 0, 200, 200, 200);
+    var gradient2 = ctx.createRadialGradient(positionMod, positionMod, 0, positionMod, positionMod, positionMod);
+    gradient2.addColorStop(numbers[0]/2,colors[1] );
+    gradient2.addColorStop(numbers[1]/3,colors[3] );
+    gradient2.addColorStop(numbers[2]/4,colors[2] );
+    gradient2.addColorStop(1,    'rgba(255,255,255,0)' );
     gradient.addColorStop(numbers[2],  colors[4] );
     gradient.addColorStop(numbers[0],  colors[5] );
     gradient.addColorStop(numbers[1],  colors[0] );
     gradient.addColorStop(1,    'rgba(0,0,0,0)' );
 
     ctx.fillStyle = gradient;
-    ctx.fillRect(0, 0, 160, 160);
+    ctx.fillRect(0, 0, 400, 400);
+    ctx.fillStyle = gradient2;
+    ctx.fillRect(0, 0, 400, 400);
     return canvas;
   }
+
 
   function createStar() {
     var canvas = document.createElement('canvas');
@@ -775,7 +821,7 @@ var Starfield = (function() {
       celObj.position.x = Math.random() * 2000 - 1000;
       celObj.position.y = Math.random() * 2000 - 1000;
       celObj.position.z = Math.random() * 2000 - 1000;
-      let scale = Math.random() * (Math.floor(Math.random() * 500) + 1);
+      let scale = Math.random() * (Math.floor(Math.random() * 550) + 100);
       celObj.scale.set( scale,scale, scale);
       celObj.frustumCulled = false;
       group.add(celObj);
@@ -789,7 +835,10 @@ var Starfield = (function() {
   function onMouseMove(e) {
     mouseX = e.clientX - windowHalfWidth;
     mouseY = e.clientY - windowHalfHeight;
+    mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
+    mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
   }
+
 
   // function onResize() {
   //   measure();
@@ -801,12 +850,107 @@ var Starfield = (function() {
   //     renderer.setSize(windowWidth, windowHeight);
   // }
 
+  // var prevLeft = 0;
+  // $(document).scroll( function(evt) {
+  //   var currentLeft = $(this).scrollLeft();
+  //   if (prevLeft != currentLeft) {
+  //     prevLeft = currentLeft;
+  //     let mod = currentLeft / (windowWidth);
+  //     // $("h2").css('opacity', 1-mod );
+  //     // console.log('invert('+ (mod*100) +'%)')
+  //     // $(".header").css('filter','invert('+ (mod*100) +'%)');
+  //     // $("h1").css('-webkit-filter','grayscale(1) invert('+ mod +')' );
+  //     // $("h1").css('filter','grayscale(1) invert('+ mod +')');
+  //     // -webkit-filter: grayscale(1) invert(1);
+  //     // filter: grayscale(1) invert(1);
+  //
+  //     console.log()
+  //   }
+  // });
+
+  var prevTop = 0;
+  var verticalSteps = 3;
+  $(document).scroll( function(evt) {
+    var currentTop = $(this).scrollTop();
+    if (prevTop !== currentTop) {
+      prevTop = currentTop;
+      let mod = currentTop / windowHeight;
+      // console.log(mod)
+      // mod = '.5'
+      // $("h1").css('-webkit-filter','invert('+ mod +')' );
+      // $("h1").css('filter','invert('+ mod +')');
+      // $("h2").css('-webkit-filter','invert('+ 0 +')' );
+      // $("h2").css('filter','invert('+ 0 +')');
+
+      // $("h2").css('-webkit-filter','grayscale(1) invert('+ (mod + mod) +')' );
+      // $("h2").css('filter','grayscale(1) invert('+ (mod + mod) +')');
+      // console.log('color','rgba(255,255,0,'+(1-mod)+'))');
+      // $("h2").css('color','rgba(255,255,0,'+(1-mod)+'))' );
+      // $("h2").css('color','rgba(255,255,0,'+(1-mod)+')))');
+      // $(".header").css('filter','invert('+ (mod*100) +'%)');
+      // $(".header").css('background-color','rgba(0,0,0,'+(1-mod)+')');
+      // $("h2").css('opacity', 1-mod );
+      // background-color: #000;
+      // $(".header").css('filter','brightness('+mod*100+'%)');
+      // $("header").css('filter','grayscale(1) invert('+ mod +')');
+    }
+  });
+
   window.addEventListener( 'resize', onWindowResize, false );
 
   function onWindowResize(){
     camera.aspect = window.innerWidth / window.innerHeight;
     camera.updateProjectionMatrix();
     renderer.setSize( window.innerWidth, window.innerHeight );
+  }
+
+  var h = 0;
+  // window.addEventListener( 'click', addOrb, false );
+  let interval = setInterval(function () {
+    addOrb();
+    if (h == 800) {
+      clearInterval(interval);
+    } else {
+      h++;
+    }
+  }, 10000);
+
+
+  window.addEventListener( 'click', popOrb, false );
+
+  function popOrb() {
+    setTimeout(function () {
+      if (h < 394) addOrb(2);
+    }, 10000);
+    for ( var i = 0; i < intersects.length; i++ ) {
+      starfield.remove(intersects[intersects.length-1].object);
+    }
+  }
+
+  function addOrb(n = 1) {
+    numbers = [
+      randomNumber(),
+      randomNumber(),
+      randomNumber()
+    ];
+    const oneFive = Math.floor(Math.random() * 5) + 0;
+    colors[oneFive] = modifyRGBA(modifyRGBA(modifyRGBA(colors[oneFive])));
+    addCelestialObjectsTo(starfield, n, createStar);
+    addCelestialObjectsTo(starfield, n, createRedDwarf);
+  }
+
+  function modifyRGBA(rgba) {
+    const mod = Math.floor(Math.random() * 3) + 0;
+    let numbers = rgba.split('rgba(')[1].split(')')[0].split(',');
+
+    if ((parseInt(numbers[mod],10) + (mod^4)) < 255) {
+      numbers[mod] = parseInt(numbers[mod],10) + (mod^4);
+    } else if ((parseInt(numbers[mod],10) - (mod^4)) > 0) {
+      numbers[mod] = parseInt(numbers[mod],10) - (mod^4);
+    } else {
+      numbers[mod] = numbers[mod];
+    }
+    return 'rgba('+numbers.join(',')+')';
   }
 
   // ---------------------------------------------------------------------------
@@ -817,11 +961,20 @@ var Starfield = (function() {
   }
 
   function render() {
-    camera.position.x += ( mouseX - camera.position.x ) * numbers[1]/80;
-    camera.position.y += ( mouseY - camera.position.y ) * numbers[0]/80;
+    camera.position.x += ( mouseX - camera.position.x ) * .01;
+    camera.position.y += ( mouseY - camera.position.y ) * .01;
 
-    starfield.rotation.x -= numbers[0]/8000;
-    starfield.rotation.y += numbers[1]/8000;
+    starfield.rotation.x -= .002;
+    starfield.rotation.y += .002;
+
+    raycaster.setFromCamera( mouse, camera );
+    intersects = raycaster.intersectObjects( starfield.children );
+
+    if (intersects.length > 0) {
+      document.body.style.cursor = 'pointer';
+    } else {
+      document.body.style.cursor = 'default';
+    }
 
     renderer.render( scene, camera );
   }
@@ -835,6 +988,10 @@ var Starfield = (function() {
 })();
 
 $(document).ready(function() {
-  Starfield.initialize('main');
-  Starfield.startAnimation();
+  OrbField.initialize('main');
+  OrbField.startAnimation();
+
+
+
+
 });

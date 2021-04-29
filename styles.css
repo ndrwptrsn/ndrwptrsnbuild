@@ -4,6 +4,16 @@
 	src: url(src/assets/ProductSansRegular.ttf)
 }
 
+@font-face {
+	font-family: 'VAL';
+	src: url(src/assets/VAL-UltraBlack.ttf)
+}
+
+@font-face {
+	font-family: 'Phosphate';
+	src: url(./src/assets/Phosphate.ttc)
+}
+
 body,
 html {
 	margin: 0;
@@ -18,7 +28,7 @@ body {
 	background: linear-gradient(to bottom, #000000, #000000);
 	background-attachment: fixed;
 	font-family: Roboto Slab, serif;
-	color: rgb(255,255,255)
+
 
 }
 
@@ -37,27 +47,43 @@ h2 {
 }
 
 h1 {
-	padding-top: 20px;
-	font-size: 12.5vw
+	padding-top: 0px;
+	padding-left: 2vw;
+	font-size: 15vw;
+	/* color: rgb(255,255,255,1) */
+	color: rgb(255,255,255,0)
+}
+
+h3 {
+	padding-top: 0px;
+	padding-left: 2vw;
+	font-size: 4vw;
+	font-family: ProductSansRegular, sans-serif;
+	color: rgb(0,0,0,1)
 }
 
 h2 {
-	margin-left: 2px
+	padding-left: 2vw;
+	font-family: Phosphate, sans-serif;
+
+	font-size:8vw;
+	color: rgb(255,255,255,0)
+
 }
 
 .icon {
 	-webkit-transition: opacity .5s;
 	-moz-transition: opacity .5s;
-	transition: opacity .5s;
-	width: 7.5vw;
+	transition: transform .5s;
+	height: 7.5vw;
 	text-decoration: none;
-	fill: rgb(255,255,255) !important;
+	fill: rgb(255,255,255,1) !important;
 	/* opacity: .5; */
 }
 
 .icon:hover {
-	opacity: .75
-	fill: rgb(0,0,0) !important;
+	transform: rotate(10deg);
+	/* fill: rgb(0,0,0) !important; */
 }
 
 #github {
@@ -90,11 +116,9 @@ p {
 	font-size: 5vw
 }
 
-a.link {
-	/* color: #999999; */
-	text-decoration: none
+a {
+	/* opacity: .5; */
 }
-
 a.link::before {
 	content: '';
 	position: absolute;
@@ -102,33 +126,40 @@ a.link::before {
 	left: 0;
 	width: 100%;
 	background: #fff;
-	height: .3vw;
+	height: 2vw;
 	z-index: -1;
 	transform: rotate(-1.5deg);
 	transition: all 0.2s
 }
 
 a.link {
+	text-decoration: none;
+
 	color: inherit;
 	position: relative;
 	z-index: 2;
-	// cursor: url(src/assets/mango.png), auto
 }
 
-/* a.link.on::before,
-a.link:hover::before {
-	transform: rotate(0deg);
-	height: 1.2vw
-} */
+.delayheader2 a {
+	margin-left: 2vw;
+}
 
-/* a.link:hover {
-	color: #000;
-} */
+a.link.on::before,
+a.link:hover::before {
+	transform: rotate(1deg);
+	height: 10vw;
+	background: #000;
+}
+
+a.link:hover {
+	/* opacity: 1; */
+}
 
 .intro {
-	height: 100vh;
+	height: 200vh;
+	width: 100vw;
 	display: flex;
-	flex-direction: column
+	flex-direction: column;
 }
 
 .content {
@@ -138,16 +169,19 @@ a.link:hover::before {
 }
 
 .header {
-	padding-left: 20px;
+	/* filter: invert(0%); */
 	mix-blend-mode: difference;
-	position: absolute;
-	padding-top: 1vh;
+	/* padding-top: 1vh; */
+	/* margin-left: 2vw; */
 	z-index: 10000000;
-	position: absolute;
+	position: fixed;
 	height: 100vh;
 	width: 100vw;
-	margin-bottom: 30px;
-	background-color: #000;
+	background-color: rgba(0,0,0,0.75);
+	/* background: -webkit-linear-gradient(to left, rgba(0,0,0,1), rgba(0,0,0,0));
+	background: linear-gradient(to left, rgba(0,0,0,1), rgba(0,0,0,0)); */
+	/* background: -webkit-radial-gradient(circle at 75%, rgba(0,0,0,0.5), rgba(0,0,0,1));
+	background: radial-gradient(circle at 75%, rgba(0,0,0,0.5), rgba(0,0,0,1)); */
 }
 
 #canvas {
@@ -338,4 +372,44 @@ html, body {
   height: 100%;
   right: 0;
   bottom: 0;
+	/* display: none; */
+}
+
+
+
+
+
+
+
+
+
+.glow {
+	text-shadow: 0 0 50px rgba(255,255,255,1), 0 0 1vw rgba(255,255,255,.25);
+	display: inline-block;
+	/* transition: text-shadow 2s ease-in-out; */
+	/* margin-left: -3vw; */
+  /* -webkit-animation: glow 10s ease-in-out infinite alternate;
+  -moz-animation: glow 10s ease-in-out infinite alternate;
+  animation: glow 10s ease-in-out infinite alternate; */
+}
+
+/* .glow:hover {
+	text-shadow: 0 0 0px rgba(255,255,255,1), 0 0 0 rgba(255,255,255,.25);
+  /* -webkit-animation: glow 10s ease-in  ;
+  -moz-animation: glow 10s ease-in  ;
+  animation: glow 10s ease-in  ; */
+} */
+
+.glow_icon {
+	-webkit-filter: drop-shadow( 30px 3px 2px rgba(255, 255, 255, 1));
+  filter: drop-shadow( 30px 3px 2px rgba(255, 255, 255, 1));
+}
+
+@-webkit-keyframes glow {
+  /* from {
+    	text-shadow: 0 0 10px #fff, 0 0 20px #000, 0 0 30px #000, 0 0 40px #fff, 0 0 50px #fff, 0 0 60px #fff, 0 0 70px #fff;
+  }
+  to {
+    text-shadow: 0 0 0px rgba(255,255,255,1), 0 0 0 rgba(255,255,255,.25);
+  } */
 }

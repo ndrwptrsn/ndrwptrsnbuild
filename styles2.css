@@ -1,0 +1,51 @@
+body {
+	background-color: #fff;
+}
+
+.game-cell {
+	background-size: cover;
+}
+
+#container {
+	z-index: -100;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+}
+
+
+#main {
+  top: 0;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  right: 0;
+  bottom: 0;
+}
+
+div.game {
+	display: grid;
+	width: 100vw;
+	height: 100vw;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: repeat(4, 1fr);
+	filter: invert(.08);
+	mix-blend-mode: difference;
+}
+
+.game-cell {
+	width: 25vw;
+	height: 25vw;
+	border: none;
+	box-sizing: border-box;
+}
+
+
+body{
+	padding: 0;
+	margin: 0;
+}
